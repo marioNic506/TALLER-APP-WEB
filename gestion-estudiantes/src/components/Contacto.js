@@ -1,54 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
 const Contacto = () => {
-  const [nombre, setNombre] = useState('');
-  const [email, setEmail] = useState('');
-  const [mensaje, setMensaje] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Mensaje enviado', { nombre, email, mensaje });
-  };
-
   return (
-    <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
+    <Container className="text-center mt-5">
       <h2>Contacto</h2>
-      <form onSubmit={handleSubmit}>
-        <div style={{ marginBottom: '15px' }}>
-          <label>Nombre</label>
-          <input 
-            type="text" 
-            value={nombre} 
-            onChange={(e) => setNombre(e.target.value)} 
-            placeholder="Tu nombre completo" 
-            style={{ padding: '10px', width: '100%', marginTop: '5px' }}
-          />
-        </div>
-        <div style={{ marginBottom: '15px' }}>
-          <label>Email</label>
-          <input 
-            type="email" 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)} 
-            placeholder="Tu correo electrónico" 
-            style={{ padding: '10px', width: '100%', marginTop: '5px' }}
-          />
-        </div>
-        <div style={{ marginBottom: '15px' }}>
-          <label>Mensaje</label>
-          <textarea 
-            value={mensaje} 
-            onChange={(e) => setMensaje(e.target.value)} 
-            placeholder="Escribe tu mensaje" 
-            rows="5"
-            style={{ padding: '10px', width: '100%', marginTop: '5px' }}
-          />
-        </div>
-        <button type="submit" style={{ padding: '10px', width: '100%', backgroundColor: '#007bff', color: 'white', border: 'none', borderRadius: '4px' }}>
-          Enviar mensaje
-        </button>
-      </form>
-    </div>
+      <Row className="justify-content-center">
+        <Col md={8}>
+          <Form>
+            <Form.Group controlId="formBasicName">
+              <Form.Label>Nombre</Form.Label>
+              <Form.Control type="text" placeholder="Ingresa tu nombre" />
+            </Form.Group>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="email" placeholder="Ingresa tu email" />
+            </Form.Group>
+            <Form.Group controlId="formBasicMessage">
+              <Form.Label>Mensaje</Form.Label>
+              <Form.Control as="textarea" rows={3} placeholder="Tu mensaje" />
+            </Form.Group>
+            <Button variant="primary" type="submit" className="mt-3">
+              Enviar
+            </Button>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

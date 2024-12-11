@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Estudiante; // Importar el modelo Estudiante
+use App\Models\Estudiante; 
 use Illuminate\Http\Request;
 
 class EstudianteController extends Controller

@@ -25,7 +25,7 @@ const ProjectManagement = () => {
   return (
     <Container>
       <h2 className="text-center my-4">Gestión de Proyectos</h2>
-      <Link to="/projects/add">
+      <Link to="/admin/projects/add">
         <Button variant="primary" className="mb-3">Agregar Proyecto</Button>
       </Link>
       <Table striped bordered hover>
@@ -46,7 +46,7 @@ const ProjectManagement = () => {
               <td>{project.Fecha_Inicio}</td>
               <td>{project.Fecha_Fin}</td>
               <td>
-                <Link to={`/projects/edit/${project.ID_Proyecto}`} className="btn btn-warning mr-2">
+                <Link to={`/admin/projects/edit/${project.ID_Proyecto}`} className="btn btn-warning mr-2">
                   Editar
                 </Link>
                 <Button onClick={() => handleDelete(project.ID_Proyecto)} className="btn btn-danger">

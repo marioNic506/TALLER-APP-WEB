@@ -3,24 +3,24 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Tutor; // Asegúrate de importar el modelo Tutor
+use App\Models\Tutor; 
 use Illuminate\Http\Request;
 
 class TutorController extends Controller
 {
-    // Mostrar todos los tutores
+
     public function index()
     {
         return Tutor::all();
     }
 
-    // Mostrar un tutor específico por ID
+
     public function show($id)
     {
         return Tutor::findOrFail($id);
     }
 
-    // Crear un nuevo tutor
+
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -31,7 +31,7 @@ class TutorController extends Controller
         return Tutor::create($validated);
     }
 
-    // Actualizar un tutor existente
+
     public function update(Request $request, $id)
     {
         $tutor = Tutor::findOrFail($id);
@@ -44,7 +44,7 @@ class TutorController extends Controller
         return $tutor;
     }
 
-    // Eliminar un tutor
+
     public function destroy($id)
     {
         $tutor = Tutor::findOrFail($id);

@@ -21,26 +21,29 @@ const TutorManagement = () => {
   return (
     <Container>
       <h2 className="text-center my-4">Gestión de Tutores</h2>
-      <Link to="/tutors/add">
+      <Link to="/admin/tutors/add">
         <Button variant="primary" className="mb-3">Agregar Tutor</Button>
       </Link>
       <Table striped bordered hover>
         <thead>
           <tr>
             <th>Nombre Tutor</th>
+            <th>Apellido</th>
             <th>Especialidad</th>
-            <th>Correo</th>
             <th>Acciones</th>
+            
+
           </tr>
         </thead>
         <tbody>
           {tutors.map(tutor => (
             <tr key={tutor.ID_Tutor}>
+            
               <td>{tutor.Nombre}</td>
+              <td>{tutor.Apellido}</td>
               <td>{tutor.Especialidad}</td>
-              <td>{tutor.Correo}</td>
               <td>
-                <Link to={`/tutors/edit/${tutor.ID_Tutor}`} className="btn btn-warning mr-2">
+                <Link to={`/admin/tutors/edit/${tutor.ID_Tutor}`} className="btn btn-warning mr-2">
                   Editar
                 </Link>
                 <Button onClick={() => handleDelete(tutor.ID_Tutor)} className="btn btn-danger">

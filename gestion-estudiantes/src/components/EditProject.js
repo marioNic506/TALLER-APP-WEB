@@ -48,7 +48,7 @@ const EditProject = () => {
       .put(`http://localhost:8000/api/proyectos/${id}`, project)
       .then(() => {
         setSuccess(true);
-        setTimeout(() => navigate('/projects'), 2000); 
+        setTimeout(() => navigate('/admin/projects'), 2000); 
       })
       .catch((err) => {
         setError('No se pudo actualizar el proyecto. Inténtalo nuevamente.');

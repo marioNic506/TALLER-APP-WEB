@@ -40,7 +40,7 @@ const AddProject = () => {
     axios.post('http://localhost:8000/api/proyectos', project)
       .then(response => {
         alert('Proyecto agregado con éxito');
-        window.location.href = '/proyectos';
+        window.location.href = '/admin/projects';
       })
       .catch(error => {
         console.error('Error al agregar el proyecto:', error);

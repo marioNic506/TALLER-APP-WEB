@@ -21,7 +21,7 @@ const StudentManagement = () => {
   return (
     <Container>
       <h2 className="text-center my-4">Gestión de Estudiantes</h2>
-      <Link to="/students/add">
+      <Link to="/admin/students/add">
         <Button variant="primary" className="mb-3">Agregar Estudiante</Button>
       </Link>
       <Table striped bordered hover>
@@ -42,7 +42,7 @@ const StudentManagement = () => {
               <td>{student.Carrera}</td>
               <td>{student.Año_Ingreso}</td>
               <td>
-                <Link to={`/students/edit/${student.ID_Estudiante}`} className="btn btn-warning mr-2">
+                <Link to={`/admin/students/edit/${student.ID_Estudiante}`} className="btn btn-warning mr-2">
                   Editar
                 </Link>
                 <Button onClick={() => handleDelete(student.ID_Estudiante)} className="btn btn-danger">

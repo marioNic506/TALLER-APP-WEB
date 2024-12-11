@@ -29,7 +29,7 @@ const EditTutor = () => {
     axios.put(`http://localhost:8000/api/tutors/${id}`, tutor)
       .then(response => {
         alert('Tutor actualizado correctamente');
-        window.location.href = '/tutors'; 
+        window.location.href = '/admin/tutors'; 
       })
       .catch(error => {
         console.error('Error al actualizar el tutor:', error);

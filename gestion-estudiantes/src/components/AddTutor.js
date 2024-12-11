@@ -24,7 +24,7 @@ const AddTutor = () => {
     axios.post('http://localhost:8000/api/tutors', tutor)
       .then(response => {
         alert('Tutor agregado correctamente');
-        window.location.href = '/tutors'; 
+        window.location.href = '/admin/tutors'; 
       })
       .catch(error => {
         console.error('Error al agregar el tutor:', error);

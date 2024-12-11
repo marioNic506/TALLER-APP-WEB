@@ -1,50 +1,30 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (email && password) {
-      console.log('Usuario logueado');
-
-      navigate('/admin');
-    }
-  };
-
   return (
-    <div style={{ padding: '20px', maxWidth: '400px', margin: '0 auto', textAlign: 'center' }}>
-      <h2>Iniciar Sesión</h2>
-      <form onSubmit={handleSubmit}>
-        <div style={{ marginBottom: '10px' }}>
-          <label>Email</label>
-          <input 
-            type="email" 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)} 
-            placeholder="Introduce tu correo" 
-            style={{ padding: '10px', width: '100%', marginTop: '5px' }}
-          />
-        </div>
-        <div style={{ marginBottom: '10px' }}>
-          <label>Contraseña</label>
-          <input 
-            type="password" 
-            value={password} 
-            onChange={(e) => setPassword(e.target.value)} 
-            placeholder="Introduce tu contraseña" 
-            style={{ padding: '10px', width: '100%', marginTop: '5px' }}
-          />
-        </div>
-        <button type="submit" style={{ padding: '10px', width: '100%', backgroundColor: '#007bff', color: 'white', border: 'none', borderRadius: '4px' }}>
-          Iniciar sesión
-        </button>
-      </form>
-    </div>
+    <Container className="my-5">
+      <Row>
+        <Col md={6} className="mx-auto">
+          <h2 className="text-center mb-4">Iniciar Sesión</h2>
+          <Form>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Correo Electrónico</Form.Label>
+              <Form.Control type="email" placeholder="Ingresa tu correo electrónico" />
+            </Form.Group>
+
+            <Form.Group controlId="formBasicPassword">
+              <Form.Label>Contraseña</Form.Label>
+              <Form.Control type="password" placeholder="Contraseña" />
+            </Form.Group>
+
+            <Button variant="primary" type="submit" className="w-100 mt-3">
+              Iniciar Sesión
+            </Button>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

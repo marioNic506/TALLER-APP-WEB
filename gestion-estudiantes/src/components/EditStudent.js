@@ -27,7 +27,7 @@ const EditStudent = () => {
     axios.put(`http://localhost:8000/api/estudiantes/${id}`, student)
       .then(response => {
         alert('Estudiante actualizado');
-        window.location.href = '/students';
+        window.location.href = '/admin/students';
       })
       .catch(error => console.error(error));
   };

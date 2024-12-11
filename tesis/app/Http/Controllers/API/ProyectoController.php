@@ -3,24 +3,24 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Proyecto; // Importa el modelo Proyecto
+use App\Models\Proyecto; 
 use Illuminate\Http\Request;
 
 class ProyectoController extends Controller
 {
-    // Mostrar todos los proyectos
+
     public function index()
     {
         return Proyecto::with(['estudiante', 'tutor', 'estado'])->get();
     }
 
-    // Mostrar un proyecto específico por ID
+  
     public function show($id)
     {
         return Proyecto::with(['estudiante', 'tutor', 'estado'])->findOrFail($id);
     }
 
-    // Crear un nuevo proyecto
+  
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -35,7 +35,7 @@ class ProyectoController extends Controller
         return Proyecto::create($validated);
     }
 
-    // Actualizar un proyecto existente
+
     public function update(Request $request, $id)
     {
         $proyecto = Proyecto::findOrFail($id);
@@ -52,7 +52,7 @@ class ProyectoController extends Controller
         return $proyecto;
     }
 
-    // Eliminar un proyecto
+
     public function destroy($id)
     {
         $proyecto = Proyecto::findOrFail($id);

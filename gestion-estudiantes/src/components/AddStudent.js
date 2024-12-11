@@ -19,7 +19,7 @@ const AddStudent = () => {
     axios.post('http://localhost:8000/api/estudiantes', student)
       .then(response => {
         alert('Estudiante agregado');
-        window.location.href = '/students';
+        window.location.href = '/admin/students';
       })
       .catch(error => console.error(error));
   };
